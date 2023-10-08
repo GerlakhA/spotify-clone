@@ -1,4 +1,7 @@
 import getSongsByTitle from '@/actions/getSongsByTitle'
+import Header from '@/components/Header'
+import SearchContent from '@/components/SearchContent'
+import SearchInput from '@/components/SearchInput'
 import { FC } from 'react'
 
 interface ISearch {
@@ -7,14 +10,20 @@ interface ISearch {
 	}
 }
 
-const Search: FC<ISearch> = ({ searchParams }) => {
-	const songs = getSongsByTitle(searchParams.title)
+const Search: FC<ISearch> = async ({ searchParams }) => {
+	const songs = await getSongsByTitle(searchParams.title)
 	return (
 		<div
 			className='bg-neutral-900 rounded-lg w-full h-full
 	overflow-hidden overflow-y-auto'
 		>
-			page
+			<Header className='from-bg-neutral-900'>
+				<div className='mb-2 flex flex-col gap-y-6'>
+					<h1 className='text-3xl text-white font-semibold'>Search</h1>
+					<SearchInput />
+				</div>
+			</Header>
+			<SearchContent songs={songs} />
 		</div>
 	)
 }
