@@ -2,6 +2,7 @@
 
 import { FC } from 'react'
 import { Song } from '../../types'
+import LikeButton from './LikeButton'
 import MediaItem from './MediaItem'
 
 interface ISearchContent {
@@ -23,6 +24,7 @@ const SearchContent: FC<ISearchContent> = ({ songs }) => {
 					<div className='flex-1'>
 						<MediaItem data={item} />
 					</div>
+					<LikeButton songId={item.id} />
 				</div>
 			))}
 		</div>
