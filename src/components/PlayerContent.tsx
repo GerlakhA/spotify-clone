@@ -5,11 +5,11 @@ import { FC, useEffect, useState } from 'react'
 import { AiFillStepBackward, AiFillStepForward } from 'react-icons/ai'
 import { BsPauseFill, BsPlayFill } from 'react-icons/bs'
 import { HiSpeakerWave, HiSpeakerXMark } from 'react-icons/hi2'
-import useSound from 'use-sound'
 import { Song } from '../../types'
 import LikeButton from './LikeButton'
 import MediaItem from './MediaItem'
 import Slider from './Slider'
+import useSound from '/Users/andrey/Desktop/NextJS/spotify-clone/node_modules/use-sound/dist/index'
 
 interface IPlayerContent {
 	song: Song
@@ -110,8 +110,11 @@ const PlayerContent: FC<IPlayerContent> = ({ song, songUrl }) => {
 					size={30}
 					className='text-neutral-400 cursor-pointer hover:text-white transition'
 				/>
-				<div className='flex items-center justify-center h-10 w-10 rounded-full bg-white p-1 cursor-pointer'>
-					<Icon size={30} className='text-black' onClick={handlePlayer} />
+				<div
+					onClick={handlePlayer}
+					className='flex items-center justify-center h-10 w-10 rounded-full bg-white p-1 cursor-pointer'
+				>
+					<Icon size={30} className='text-black' />
 				</div>
 				<AiFillStepForward
 					onClick={onPlayNext}
