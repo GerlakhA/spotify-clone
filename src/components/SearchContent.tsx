@@ -1,5 +1,6 @@
 'use client'
 
+import { useOnPlay } from '@/hooks/useOnPlay'
 import { FC } from 'react'
 import { Song } from '../../types'
 import LikeButton from './LikeButton'
@@ -10,6 +11,7 @@ interface ISearchContent {
 }
 
 const SearchContent: FC<ISearchContent> = ({ songs }) => {
+	const onPlay = useOnPlay(songs)
 	if (songs.length === 0) {
 		return (
 			<div className='flex flex-col gap-y-2 w-full px-6 text-neutral-400'>
@@ -22,7 +24,7 @@ const SearchContent: FC<ISearchContent> = ({ songs }) => {
 			{songs.map(item => (
 				<div key={item.id} className='flex items-center gap-x-4 w-full'>
 					<div className='flex-1'>
-						<MediaItem data={item} />
+						<MediaItem onClick={(id: string) => onPlay(id)} data={item} />
 					</div>
 					<LikeButton songId={item.id} />
 				</div>

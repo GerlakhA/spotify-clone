@@ -1,6 +1,7 @@
 'use client'
 
 import { useAuthModal } from '@/hooks/useAuthModal'
+import { useOnPlay } from '@/hooks/useOnPlay'
 import { useUploadModal } from '@/hooks/useUploadModal'
 import { useUser } from '@/hooks/useUser'
 import { FC } from 'react'
@@ -17,6 +18,8 @@ const Library: FC<ILibrary> = ({ songs }) => {
 	const authModal = useAuthModal()
 	const uploadModal = useUploadModal()
 	const { user } = useUser()
+	const onPlay = useOnPlay(songs)
+
 	const onClick = () => {
 		if (!user) {
 			return authModal.onOpen()
@@ -40,7 +43,11 @@ const Library: FC<ILibrary> = ({ songs }) => {
 			</div>
 			<div className='flex flex-col gap-y-2 mt-4 px-3'>
 				{songs.map(item => (
-					<MediaItem key={item.id} data={item} onClick={() => {}} />
+					<MediaItem
+						key={item.id}
+						data={item}
+						onClick={(id: string) => onPlay(id)}
+					/>
 				))}
 			</div>
 		</div>
