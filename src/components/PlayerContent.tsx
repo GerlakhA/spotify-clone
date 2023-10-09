@@ -92,7 +92,12 @@ const PlayerContent: FC<IPlayerContent> = ({ song, songUrl }) => {
 					<LikeButton songId={song.id} />
 				</div>
 			</div>
-			<div className='flex md:hidden col-auto w-full justify-end items-center'>
+			<div className='flex md:hidden col-auto w-full justify-end items-center gap-x-4'>
+				<AiFillStepBackward
+					onClick={onPlayPrevious}
+					size={30}
+					className='text-neutral-400 cursor-pointer hover:text-white transition'
+				/>
 				<div
 					onClick={handlePlayer}
 					className='h-10 w-10 flex justify-center items-center
@@ -100,7 +105,13 @@ const PlayerContent: FC<IPlayerContent> = ({ song, songUrl }) => {
 				>
 					<Icon size={30} className='text-black' />
 				</div>
+				<AiFillStepForward
+					onClick={onPlayNext}
+					size={30}
+					className='text-neutral-400 cursor-pointer hover:text-white transition'
+				/>
 			</div>
+
 			<div
 				className='hidden h-full md:flex justify-center items-center w-full
         max-w[722px] gap-x-6'
