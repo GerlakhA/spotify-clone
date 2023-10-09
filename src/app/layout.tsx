@@ -7,6 +7,7 @@ import { Figtree } from 'next/font/google'
 import { Toaster } from 'sonner'
 import SupabaseProvider from '../providers/SupabaseProvider'
 import './globals.css'
+import Player from '@/components/Player'
 
 const font = Figtree({ subsets: ['latin'] })
 
@@ -31,6 +32,7 @@ export default async function RootLayout({
 					<UserProvider>
 						<ModalProvider />
 						<SideBar songs={userSongs}>{children}</SideBar>
+						<Player />
 					</UserProvider>
 				</SupabaseProvider>
 			</body>
