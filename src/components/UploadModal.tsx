@@ -1,6 +1,5 @@
 'use client'
 
-import Input from '@/components/Input'
 import { useUploadModal } from '@/hooks/useUploadModal'
 import { useUser } from '@/hooks/useUser'
 import { useSupabaseClient } from '@supabase/auth-helpers-react'
@@ -10,6 +9,7 @@ import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import uniqid from 'uniqid'
 import Button from './Button'
+import Input from './Input'
 import Modal from './Modal'
 
 const UploadModal = () => {

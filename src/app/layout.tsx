@@ -1,13 +1,13 @@
 import getSongsByUserId from '@/actions/getSongsByuserId'
-import SideBar from '@/components/SideBar'
 import ModalProvider from '@/providers/ModalProvider'
 import UserProvider from '@/providers/UserProvider'
 import type { Metadata } from 'next'
 import { Figtree } from 'next/font/google'
 import { Toaster } from 'sonner'
+import Player from '../components/Player'
+import SideBar from '../components/SideBar'
 import SupabaseProvider from '../providers/SupabaseProvider'
 import './globals.css'
-import Player from '@/components/Player'
 
 const font = Figtree({ subsets: ['latin'] })
 

@@ -1,8 +1,8 @@
 import getSongsByTitle from '@/actions/getSongsByTitle'
-import Header from '@/components/Header'
-import SearchContent from '@/components/SearchContent'
-import SearchInput from '@/components/SearchInput'
 import { FC } from 'react'
+import Header from '../../components/Header'
+import SearchContent from '../../components/SearchContent'
+import SearchInput from '../../components/SearchInput'
 
 interface ISearch {
 	searchParams: {

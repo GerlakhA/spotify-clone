@@ -1,9 +1,9 @@
 'use client'
 
-import SongItem from '@/components/SongItem'
 import { useOnPlay } from '@/hooks/useOnPlay'
 import { FC } from 'react'
 import { Song } from '../../../../types'
+import SongItem from '../../../components/SongItem'
 
 interface IPageConntent {
 	songs: Song[]
