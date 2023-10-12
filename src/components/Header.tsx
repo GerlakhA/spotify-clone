@@ -59,10 +59,16 @@ const Header: FC<IHeader> = ({ children, className }) => {
 					</button>
 				</div>
 				<div className='flex md:hidden gap-x-2 items-center'>
-					<button className='rounded-full p-2 bg-white hover:opacity-75 flex justify-center items-center'>
+					<button
+						onClick={() => router.push('/')}
+						className='rounded-full p-2 bg-white hover:opacity-75 flex justify-center items-center'
+					>
 						<HiHome className='text-black' size={20} />
 					</button>
-					<button className='rounded-full p-2 bg-white hover:opacity-75 flex justify-center items-center'>
+					<button
+						onClick={() => router.push('/search')}
+						className='rounded-full p-2 bg-white hover:opacity-75 flex justify-center items-center'
+					>
 						<BiSearch className='text-black' size={20} />
 					</button>
 				</div>

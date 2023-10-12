@@ -27,7 +27,12 @@ export default async function RootLayout({
 	return (
 		<html lang='en'>
 			<body className={font.className}>
-				<Toaster position='top-center' />
+				<Toaster
+					position='top-center'
+					theme='dark'
+					closeButton
+					duration={2500}
+				/>
 				<SupabaseProvider>
 					<UserProvider>
 						<ModalProvider />
